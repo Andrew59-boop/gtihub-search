@@ -1,1 +1,45 @@
-<p>profile works!</p>
+<div class="container">
+
+    <div class="card" style="height:fit-content;">
+        <div class="card-header">
+            <app-search (_profile) = "findProfile($event)"></app-search>
+            <br>
+          {{myprofile.login}}
+        </div>
+        <div class="card-body">
+            <div class ="row">
+                <img src={{myprofile.avatar_url}} style="height: 150px;">
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="myprofile">
+                        <a href="{{myprofile.followers}}" class="btn btn-dark">Followers {{myprofile.followers}}</a>
+                    </div>
+                      
+                </div>
+                <div class="col-md-2">
+                    <a href="{{myprofile.following}}" class="btn btn-dark">following {{myprofile.following}}</a>
+                    
+                </div>
+                <div class="col-md-2">
+                    <a href="{{myprofile.public_repos}}" class="btn btn-dark">repos {{myprofile.public_repos}}</a>
+    
+                </div>
+            </div>
+            <div class="row" *ngFor = "let repo of repos">
+                <div class="col-sm-6">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">{{repo.name}}</h5>
+                      <p class="card-text">{{repo.description}}</p>
+                      <a href={{repo.html_url}} class="btn btn-primary">View Repository </a>
+                    </div>
+                  </div>
+                </div>
+    
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
