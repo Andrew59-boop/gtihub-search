@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ProfileService } from '../service/profile.service';
+import { ProfileService } from '../profile.service';
 import { profile } from '../profile';
-import { RepoListService } from '../repo-list/repo-list.service';
+import { RepoListService } from './repo-list service/repo-list.service';
 import { repository } from '../repository';
 
 @Component({

@@ -5,12 +5,16 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class RepoListService {
+   
 
-  constructor(private http:HttpClient) {
+  constructor(private http:HttpClient) { 
     console.log("service is now ready!")
-   }
+    
+  }
 
-   getRepos(user):any{
-     return this.http.get("https://api.github.com/users" + user + "/repos");
-   }
+  getRepos(user):any{
+    return this.http.get("https://api.github.com/users/" + user + "/repos");
+  
+  }
+
 }
